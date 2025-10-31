@@ -338,29 +338,6 @@ footer {
     margin: 0 auto;
 }
 
-.ecosystem-card {
-    background: #222;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.ecosystem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
-}
-
-.ecosystem-card h3 {
-    color: #ff0000;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.ecosystem-card p {
-    color: #ccc;
-    line-height: 1.6;
-}
 
 .timeline-section {
     padding: 5rem 2rem;
@@ -619,6 +596,39 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Contact Page Styles */
+.contact-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('images/boxinggloves.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 80px; /* This ensures content starts below the fixed header */
+}
+
+
+
+.contact-section {
+    padding: 5rem 2rem;
+    background: #111;
+}
+
+
+
+.contact-form {
+    background: #222;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+
+
 
 
 
@@ -641,9 +651,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    .section-title {
-        font-size: 2rem;
-    }
+ 
 
     .footer-content {
         grid-template-columns: 1fr;
@@ -674,6 +682,10 @@ footer {
         font-size: 2.5rem;
     }
 
+    .contact-hero.hero-content h1 {
+        font-size: 2.5rem;
+    }
+
     /* Ecosystem page responsive */
     .ecosystem-hero .hero-content h1 {
         font-size: 2.5rem;
@@ -690,6 +702,20 @@ footer {
     
     .programs-grid {
         grid-template-columns: 1fr;
+    }
+    /* Contact page */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-form
+     {
+        padding: 1.5rem;
     }
 }
 
@@ -731,9 +757,7 @@ footer {
         font-size: 1rem;
     }
     
-    .ecosystem-grid {
-        grid-template-columns: 1fr;
-    }
+  
     
     .timeline-content {
         padding: 1.5rem;
@@ -754,5 +778,18 @@ footer {
     
     .gym-icon {
         font-size: 2.5rem;
+    }
+    /* Contact page */
+    .contact-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-hero .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .contact-form
+     {
+        padding: 1rem;
     }
 }

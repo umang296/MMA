@@ -459,6 +459,76 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Ecosystem
+// Contact form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Simple validation
+            if (name && email && subject && message) {
+                // In a real application, you would send this data to a server
+                // For now, we'll just show a success message
+                showNotification('Thank you for your message! We will get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                showNotification('Please fill in all fields.', 'error');
+            }
+        });
+    }
+    
+    // Show notification function
+    function showNotification(message, type = 'success') {
+        // Remove existing notification
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+
+        // Create new notification
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 1rem 2rem;
+            background: ${type === 'error' ? '#ff4444' : '#00aa00'};
+            color: white;
+            border-radius: 5px;
+            z-index: 3000;
+            animation: slideIn 0.3s ease;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 90%;
+            word-wrap: break-word;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 300);
+        }, 3000);
+    }
+});
+
+
 
 
